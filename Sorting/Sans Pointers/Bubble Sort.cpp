@@ -1,14 +1,11 @@
 #include <iostream>
 using namespace std;
-//void BubbleSort(int A[]);
-//int swap (int,int);
 
-int A[50],i,j,n,a,b,t;
 
 void BubbleSort(int A[ ], int n)
 {
-//	int i,j,n;
-	for (i=0;i<n;i++)
+    int i,j;
+	for (i=0;i<n;i++) 
 	{
 		for (j=0;j<n-i-1;j++)
 		{
@@ -20,12 +17,12 @@ void BubbleSort(int A[ ], int n)
 	}
 }
 
-int swap(int a, int b)
+int swap(int &a, int &b)
 {
-	//int a,b,t;
-	t=a;
+	int temp;
+	temp=a;
 	a=b;
-	b=t;
+	b=temp;
 }
 
 int main()
