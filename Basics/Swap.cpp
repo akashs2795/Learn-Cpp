@@ -50,7 +50,7 @@ int main ()
 	switch (option)
 	{
 		case 1: Print (A, size);
-			SwapRef(A[index1], A[index2]); 
+			SwapRef(A[index1], A[index2]); //be careful
 			Print (A, size);
 			break;
 		case 2: Print (A, size);
