@@ -51,5 +51,3 @@ int main()
 	cout<<"The insertion sorted array in increasing order is "<<endl;
     Print(A,n);
 }
-
-
