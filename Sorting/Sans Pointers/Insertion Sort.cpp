@@ -1,48 +1,53 @@
 #include <iostream>
 using namespace std;
 
-int A[50],i,j,n,a,b,t;
-
-void InsertionSort(int A[ ], int n)
+void Print(int A[],int n) // function to print the array
 {
-//	int i,j,n;
-	for (i=0;i<n;i++)
+	cout<<"The array is ";
+	for (int i=0;i<n;i++)
 	{
-		for (j=i+1;j<n;j++)
+		cout<<A[i]<<" ";
+	}
+	cout<<endl;
+}
+
+void InsertionSort(int A[ ], int n) 
+{
+	int i,j, value, hole;
+	for (i=1;i<n;i++)
+	{
+		value=A[i]; //creating variables to have the value of A[i] and i
+		hole=i;
+		while ((hole>0) && (A[hole-1]>value)) //checking if there is an element of greater value
 		{
-			if (A[i]>A[j])
-			{
-				swap (A[j],A[i]);
-			}
+			A[hole]=A[hole-1]; //if so, shift the greater element to the hole
+			hole--; //check the next element
 		}
+		A[hole]=value; //fil the hole element
+		cout<<A[hole]<<endl;
+		
 	}
 }
 
-int swap(int a, int b)
+int swap(int &a, int &b)
 {
-	//int a,b,t;
-	t=a;
+	int temp=a;
 	a=b;
-	b=t;
+	b=temp;
 }
 
 int main()
 {
-	int A[50],i,j,n;
-	cout<<"Enter the number of elements (less than 50)"<<endl;
-	cin>>n;
+	int i,size;
+	cout<<"Enter the number of elements"<<endl;
+	cin>>size;
+	int *A = new int[size]; // initializing a dynamic array of size 'size'
 	cout<<"Enter the elements"<<endl;
-	for (i=0;i<n;i++)
+	for (i=0;i<size;i++)
 	{
 		cin>>A[i];
 	}
-	InsertionSort(A,n);
+	InsertionSort(A,size); //calling the sorting function
 	cout<<"The insertion sorted array in increasing order is "<<endl;
-	for (i=0;i<n;i++)
-	{
-		cout<<A[i]<<" ";
-	}
-	return 0;
+    Print(A,n);
 }
-
-
