@@ -3,17 +3,14 @@ using namespace std;
 
 int fibonacciRecursive (int n)
 {
-		if ( n == 0 )
-         return 0;
-        else if ( n == 1 )
-         return 1;
-        else
-         {
-		 	return ( fibonacciRecursive(n-1) + fibonacciRecursive(n-2) );
-		 }
-
-
-
+	if ( n == 0 )
+    	return 0;
+    else if ( n == 1 )
+    	return 1;
+    else
+    {
+		return ( fibonacciRecursive(n-1) + fibonacciRecursive(n-2) );
+	}
 }
 
 int fibonacciIterative(int n)
@@ -24,23 +21,22 @@ int fibonacciIterative(int n)
 	b = 1 ;
 	if(n==1) //n=1 and n=2 are given cases
 	{
-		cout<<a;
+		return a;
 	}
 	else if(n==2)
 	{
-		cout<<a<<" "<<b;
+		return b;
 	}
 	else 
 	{
-		cout<<a<<" "<<b<<" ";
 		while(i<=(n-1) && i>0) 
 		{
 			c = a+b ; 
-			cout<<c<<" ";
 			a = b ; //shifting the values to find the next element
 			b = c ; 
 			i++ ; 
-		}		
+		}
+		return c;		
 	}
 }
 
@@ -53,11 +49,11 @@ int main()
 	cin>>option;
 	switch (option)
 	{
-		case 1: cout<<"The series for "<<n<<" is ";
-			fibonacciIterative(n); break;
-		case 2: cout<<"The "<<n<<"th element is ";
-			element=fibonacciRecursive(n);
-			cout<<element; break;
-	
+		case 1: cout<<"The "<<n<<"th Fibonacci number is ";
+			cout<<fibonacciIterative(n); 
+			break;
+		case 2: cout<<"The "<<n<<"th Fibonacci number is ";
+			cout<<fibonacciRecursive(n);
+			break;	
 	}
 }
